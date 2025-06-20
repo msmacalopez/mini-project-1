@@ -263,7 +263,7 @@ footer {
     flex-grow: 1;
   }
 }
-/* phones 550px */
+/* phones 550pxcomment */
 @media (max-width: 550px) {
   article {
     display: flex;
