@@ -1,0 +1,292 @@
+:root {
+  --bluecolorprimary: rgb(0, 0, 109);
+  --topcolor: skyblue;
+  --shadow: -5px 5px 10px 5px rgba(118, 114, 114, 0.704);
+}
+* {
+  /* border: 1px yellow solid; */
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.container {
+  /* percentage of the parent  */
+  width: 80%;
+  /* To put the content in the 80% middle, distribute free space equally  */
+  margin: auto;
+}
+/* universal btn class  */
+.btn {
+  background: skyblue;
+  padding: 10px 15px;
+  /* border: 1px solid skyblue;      or*/
+  border: none;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+}
+.btn:hover {
+  cursor: pointer;
+}
+/* <!-- global message --> */
+.globalsection {
+  background: var(--topcolor);
+  padding: 10px;
+}
+/*---------------------> .global .container { */
+.globalsection > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a[href="https://www.facebook.com/"]
+{
+  color: blue;
+}
+a[href="https://www.instagram.com/"]
+{
+  color: purple;
+}
+a[href="https://www.pinterest.com/"]
+{
+  color: red;
+}
+/* <!-- header section  --> */
+header {
+  background: var(--bluecolorprimary);
+  color: white;
+  padding: 10px 0;
+  font-size: 20px;
+}
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  background: white;
+  color: var(--bluecolorprimary);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo > div {
+  border: 2px dotted var(--bluecolorprimary);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  /* // because of the new div, the content moves to top left  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .container > ul{}  */
+header ul {
+  display: flex;
+  list-style-type: none;
+}
+header ul li {
+  margin-left: 1rem;
+}
+header ul li:hover {
+  cursor: pointer;
+  background: red;
+  /* font-size: 28px; ---> affect document flow */
+  transform: scale(1.5);
+}
+/* <!-- hero section  --> */
+.hero {
+  background: url(./resources/img3.jpg) no-repeat center;
+  height: 60vh;
+  background-size: cover; /*--> cropped the images according dimension */
+  /*background-size: contain; -->will only use one image and repeat it in empty spaces, also by default image is on the top-left */
+
+  /* To put the hero-content in the center:  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-content {
+  width: 450px;
+  background: rgba(128, 128, 128, 0.473);
+  /* to make transparent only hover over  */
+  color: white;
+
+  padding: 32px;
+  border-radius: 10px;
+
+  display: flex;
+  /* now change direction */
+  flex-direction: column;
+  align-items: center;
+  /* now"align items": this is regardless to Xaxis cause i change the direction  */
+}
+.hero-content hr {
+  width: 100%;
+}
+
+/* <!-- latest post section  --> */
+.latest {
+  padding: 3rem 0;
+  background: url(./resources/img1.jpg) no-repeat center;
+  background-size: cover;
+  filter: grayscale(0.3);
+}
+.main {
+  display: flex;
+  gap: 1rem;
+}
+.articles {
+  width: 66%;
+  /* background: rgba(128, 128, 128, 0.673); */
+}
+article {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px; /* among the childs */
+
+  box-shadow: var(--shadow);
+  background: rgba(255, 255, 255, 0.807);
+  border-radius: 10px;
+  margin-bottom: 24px; /* between the article and the parent */
+  padding: 20px 16px;
+}
+article .art-img {
+  width: 400px;
+}
+article .btn {
+  float: right; /* related to the parent, to the right of the parent */
+}
+.side-links {
+  width: 34%;
+}
+.country {
+  background: rgba(109, 155, 16, 0.778);
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 32px; /* space with next: .date */
+}
+.date {
+  background: rgba(201, 218, 91, 0.778);
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 32px;
+}
+/* <!-- Recommendation --> */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 2rem;
+}
+.card {
+  width: 350px;
+  box-shadow: var(--shadow);
+  padding-bottom: 32px;
+  border-radius: 10px;
+
+  flex-grow: 1;
+}
+.card > img {
+  /* border-top-left-radius: 10px;
+  border-top-right-radius: 10px; */
+  border-radius: 10px 10px 0 0;
+}
+.card .btn {
+  width: 100%;
+}
+/* <!-- subscribe section  --> */
+.subs {
+  background: lightblue;
+  margin-top: 2rem;
+  padding: 32px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subs input {
+  line-height: 42px;
+  padding: 5px 10px;
+  border: 1px solid rgba(128, 128, 128, 0.799);
+  border-radius: 5px;
+}
+/* <!-- footer  --> */
+footer {
+  background: black;
+  color: white;
+  padding: 64px;
+  text-align: center;
+  margin-top: 32px;
+}
+/* media queries  */
+/*All--> @media (fx){} */
+/*All--> @media all (fx){} */
+/*Screen--> @media screen (fx){} */
+/*Printer--> @media printer (fx){} */
+/* -------------------------------------------- */
+/* fxs: max, min, > or <  */
+
+/* LAPTOPS  */ /* @media (width < 992px) */ /* @media (<550px < width < 992px) */
+@media (max-width: 992px) {
+  /* 0 to 992px : only write what you want to overwrite*/
+  .globalsection {
+    background: red;
+  }
+}
+/* mobile devices */
+@media (max-width: 550px) {
+  .globalsection {
+    display: none; /* hide the section completely */
+  }
+}
+
+/* Applied to the project  */
+/* ipad view 992px  */
+@media (width < 992px) {
+  .main {
+    /* display: flex; */
+    flex-direction: column;
+  }
+  .articles {
+    width: 100%;
+  }
+  .side-links {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+  }
+  .side-links > div {
+    flex-grow: 1;
+  }
+}
+/* phones 550px */
+@media (max-width: 550px) {
+  article {
+    display: flex;
+    flex-direction: column;
+  }
+  article .art-img {
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+  }
+  .side-links {
+    display: flex;
+    flex-direction: column;
+  }
+  .side-links .country {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .subs form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
